@@ -66,7 +66,8 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        
+        Session.shared.userId = 0
+        Session.shared.token = ""
         
         performSegue(withIdentifier: self.fromLoginToTabBar, sender: self)
     }
