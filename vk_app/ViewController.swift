@@ -73,6 +73,96 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func getDataOverAPI(_ sender: Any) {
+        guard Session.shared.token != "",
+              Session.shared.userId != 0 else {
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/friends.get"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "user_id", value: String(Session.shared.userId)),
+            URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "v", value: "5.68")
+        ]
+        
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        let url = urlComponents.url
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            
+            print(json!)
+        }
+
+        task.resume()
+    }
+    
+    
+    @IBAction func getPhoto(_ sender: Any) {
+        guard Session.shared.token != "",
+              Session.shared.userId != 0 else {
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/photos.getAll"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "owner_id", value: String(Session.shared.userId)),
+            URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "v", value: "5.68")
+        ]
+        
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        let url = urlComponents.url
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            
+            print(json!)
+        }
+
+        task.resume()
+    }
+    
+    @IBAction func getGroup(_ sender: Any) {
+    
+    //
+        guard Session.shared.token != "",
+              Session.shared.userId != 0 else {
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/groups.get"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "user_id", value: String(Session.shared.userId)),
+            URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "v", value: "5.68")
+        ]
+        
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        let url = urlComponents.url
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            
+            print(json!)
+        }
+
+        task.resume()
+        
+    }
     
     
 }
