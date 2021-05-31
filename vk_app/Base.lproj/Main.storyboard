@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_l_DmitrievSergey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +50,48 @@
                                         <state key="normal" title="Войти"/>
                                         <connections>
                                             <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUV-aU-i4K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGA-25-Kcr">
+                                        <rect key="frame" x="50" y="331" width="56" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="VK Auth">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="wEz-Qq-5Ky" kind="presentation" modalPresentationStyle="automatic" id="8gf-Ig-WU3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCy-B3-ktp">
+                                        <rect key="frame" x="46" y="407" width="65" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="GetPhoto">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getDataOverAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKt-Ye-37f"/>
+                                            <action selector="getPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMN-t1-Tup"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWM-Kt-THw">
+                                        <rect key="frame" x="46" y="454" width="92" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="GetGroupList">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getDataOverAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSu-XH-FGe"/>
+                                            <action selector="getGroup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LRE-l0-6Ie"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09h-Ou-ANN">
+                                        <rect key="frame" x="46" y="369" width="100" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="GetFriendsList">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getDataOverAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pxn-NZ-D88"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,10 +138,45 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="XvJ-44-CLx">
+            <objects>
+                <viewController id="wEz-Qq-5Ky" customClass="AuthViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cCp-Tg-ogS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZS-ZA-x3f">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YEp-pY-soq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YEp-pY-soq" firstAttribute="trailing" secondItem="MZS-ZA-x3f" secondAttribute="trailing" id="4sK-1w-g3V"/>
+                            <constraint firstItem="MZS-ZA-x3f" firstAttribute="top" secondItem="YEp-pY-soq" secondAttribute="top" id="7K5-oz-TIe"/>
+                            <constraint firstItem="MZS-ZA-x3f" firstAttribute="leading" secondItem="YEp-pY-soq" secondAttribute="leading" id="WZM-a3-qef"/>
+                            <constraint firstItem="YEp-pY-soq" firstAttribute="bottom" secondItem="MZS-ZA-x3f" secondAttribute="bottom" id="wxb-pX-pz7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="90C-si-R8g"/>
+                    <connections>
+                        <outlet property="webview" destination="MZS-ZA-x3f" id="MmL-p7-dNE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJS-rT-7k6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="871"/>
+        </scene>
         <!--Поиск групп-->
         <scene sceneID="PR1-pt-KIt">
             <objects>
-                <tableViewController id="qdK-Mt-zwK" customClass="AllGroupViewController" customModule="_l_DmitrievSergey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qdK-Mt-zwK" customClass="AllGroupViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tgw-6j-3sk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +199,7 @@
         <!--Друзья-->
         <scene sceneID="D6V-mj-CMH">
             <objects>
-                <tableViewController id="VaN-HZ-ee8" customClass="FriendViewController" customModule="_l_DmitrievSergey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="VaN-HZ-ee8" customClass="FriendViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e8l-hf-LXk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +222,7 @@
         <!--Фото-->
         <scene sceneID="Hja-vB-Y8v">
             <objects>
-                <collectionViewController id="BIW-iF-dbZ" customClass="FriendCollectionViewController" customModule="_l_DmitrievSergey" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="BIW-iF-dbZ" customClass="FriendCollectionViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3WX-bD-CpU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +249,7 @@
         <!--Группы-->
         <scene sceneID="BIE-1C-MoL">
             <objects>
-                <tableViewController id="0f9-0K-WXY" customClass="GroupViewController" customModule="_l_DmitrievSergey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0f9-0K-WXY" customClass="GroupViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8zN-2i-dgg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,7 +320,7 @@
                                 <rect key="frame" x="0.0" y="88" width="364" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkG-bo-ZxM" customClass="FriendListControl" customModule="_l_DmitrievSergey" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkG-bo-ZxM" customClass="FriendListControl" customModule="vk_app" customModuleProvider="target">
                                 <rect key="frame" x="364" y="88" width="50" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -345,6 +422,9 @@
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

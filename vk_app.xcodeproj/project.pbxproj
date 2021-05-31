@@ -27,6 +27,7 @@
 		9ED0A3A92622F481007E5496 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0A3A72622F481007E5496 /* GroupTableViewCell.swift */; };
 		9ED0A3AA2622F481007E5496 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED0A3A82622F481007E5496 /* GroupTableViewCell.xib */; };
 		9ED0A3AF26233CE1007E5496 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0A3AE26233CE1007E5496 /* FriendViewController.swift */; };
+		9EDC8FE12664F38A00EAE8B4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDC8FE02664F38A00EAE8B4 /* AuthViewController.swift */; };
 		9EF714E4263F2B6800F1390C /* FriendListControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF714E3263F2B6800F1390C /* FriendListControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		9ED0A3A72622F481007E5496 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		9ED0A3A82622F481007E5496 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		9ED0A3AE26233CE1007E5496 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		9EDC8FE02664F38A00EAE8B4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		9EF714E3263F2B6800F1390C /* FriendListControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				9EB97F4A261CE8220066601E /* LaunchScreen.storyboard */,
 				9EB97F4D261CE8220066601E /* Info.plist */,
 				9E710AA82660FAC8003CB03D /* Session.swift */,
+				9EDC8FE02664F38A00EAE8B4 /* AuthViewController.swift */,
 			);
 			path = vk_app;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				9ED0A3A42622F46D007E5496 /* UserTableViewCell.swift in Sources */,
 				9EB97F44261CE8210066601E /* ViewController.swift in Sources */,
 				9E55664326235AFC00EEAA81 /* DataStorage.swift in Sources */,
+				9EDC8FE12664F38A00EAE8B4 /* AuthViewController.swift in Sources */,
 				9E5566462623611600EEAA81 /* GroupViewController.swift in Sources */,
 				9E710AA92660FAC8003CB03D /* Session.swift in Sources */,
 				9EF714E4263F2B6800F1390C /* FriendListControl.swift in Sources */,
