@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,9 +51,11 @@
                                             <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUV-aU-i4K"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGA-25-Kcr">
-                                        <rect key="frame" x="50" y="331" width="56" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGA-25-Kcr">
+                                        <rect key="frame" x="179" y="319" width="56" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="t2Q-rA-tKC"/>
+                                        </constraints>
                                         <state key="normal" title="VK Auth">
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
@@ -62,31 +63,35 @@
                                             <segue destination="wEz-Qq-5Ky" kind="presentation" modalPresentationStyle="automatic" id="8gf-Ig-WU3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCy-B3-ktp">
-                                        <rect key="frame" x="46" y="407" width="65" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCy-B3-ktp">
+                                        <rect key="frame" x="174.5" y="419" width="65" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jcy-hI-SJc"/>
+                                        </constraints>
                                         <state key="normal" title="GetPhoto">
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="getDataOverAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKt-Ye-37f"/>
-                                            <action selector="getPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMN-t1-Tup"/>
+                                            <action selector="getPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bW2-NS-r89"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWM-Kt-THw">
-                                        <rect key="frame" x="46" y="454" width="92" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWM-Kt-THw">
+                                        <rect key="frame" x="161" y="469" width="92" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="TZC-N7-PLL"/>
+                                        </constraints>
                                         <state key="normal" title="GetGroupList">
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="getDataOverAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSu-XH-FGe"/>
                                             <action selector="getGroup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LRE-l0-6Ie"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09h-Ou-ANN">
-                                        <rect key="frame" x="46" y="369" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09h-Ou-ANN">
+                                        <rect key="frame" x="157" y="369" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1ui-cr-Kjd"/>
+                                        </constraints>
                                         <state key="normal" title="GetFriendsList">
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
@@ -97,6 +102,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="NQM-AQ-eXI" firstAttribute="centerX" secondItem="mr7-93-Q47" secondAttribute="centerX" id="1KA-Yn-ABb"/>
+                                    <constraint firstItem="yCy-B3-ktp" firstAttribute="top" secondItem="09h-Ou-ANN" secondAttribute="top" constant="50" id="2G1-al-SuV"/>
                                     <constraint firstItem="NQM-AQ-eXI" firstAttribute="top" secondItem="KFJ-ce-kGg" secondAttribute="bottom" constant="10" id="6PI-lR-hHU"/>
                                     <constraint firstItem="KFJ-ce-kGg" firstAttribute="top" secondItem="7of-FV-PYV" secondAttribute="bottom" constant="10" id="9Bo-Ty-oNc"/>
                                     <constraint firstItem="NQM-AQ-eXI" firstAttribute="leading" secondItem="mr7-93-Q47" secondAttribute="leading" constant="50" id="BXT-aa-0kd"/>
@@ -105,9 +111,12 @@
                                     <constraint firstItem="ZFj-ZE-dTn" firstAttribute="top" secondItem="NQM-AQ-eXI" secondAttribute="bottom" constant="10" id="PCX-kS-yFA"/>
                                     <constraint firstItem="KFJ-ce-kGg" firstAttribute="centerX" secondItem="mr7-93-Q47" secondAttribute="centerX" id="RPz-9V-5yS"/>
                                     <constraint firstAttribute="bottom" secondItem="ZFj-ZE-dTn" secondAttribute="bottom" constant="200" id="U73-aD-zIZ"/>
+                                    <constraint firstItem="tWM-Kt-THw" firstAttribute="top" secondItem="yCy-B3-ktp" secondAttribute="top" constant="50" id="VTB-xA-tMb"/>
                                     <constraint firstItem="ZFj-ZE-dTn" firstAttribute="centerX" secondItem="mr7-93-Q47" secondAttribute="centerX" id="WzX-IM-GPh"/>
+                                    <constraint firstItem="09h-Ou-ANN" firstAttribute="top" secondItem="dGA-25-Kcr" secondAttribute="top" constant="50" id="Yfv-UF-Bee"/>
                                     <constraint firstItem="7of-FV-PYV" firstAttribute="leading" secondItem="mr7-93-Q47" secondAttribute="leading" constant="50" id="ZZH-qn-XUd"/>
                                     <constraint firstAttribute="trailing" secondItem="Wec-ny-doD" secondAttribute="trailing" constant="50" id="aMX-fd-2zN"/>
+                                    <constraint firstItem="dGA-25-Kcr" firstAttribute="top" secondItem="ZFj-ZE-dTn" secondAttribute="top" constant="50" id="eNr-1w-rmq"/>
                                     <constraint firstItem="8Ea-6Y-pJW" firstAttribute="top" secondItem="Wec-ny-doD" secondAttribute="bottom" constant="10" id="hga-CF-OSl"/>
                                     <constraint firstItem="8Ea-6Y-pJW" firstAttribute="centerX" secondItem="mr7-93-Q47" secondAttribute="centerX" id="nLw-F5-Tam"/>
                                     <constraint firstItem="7of-FV-PYV" firstAttribute="top" secondItem="8Ea-6Y-pJW" secondAttribute="bottom" constant="8" symbolic="YES" id="oeB-hb-Ixk"/>
@@ -121,10 +130,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tWM-Kt-THw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Xm-sv-jDC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mr7-93-Q47" secondAttribute="trailing" id="EDt-w6-kgT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mr7-93-Q47" secondAttribute="bottom" id="LRM-FX-wVS"/>
+                            <constraint firstItem="09h-Ou-ANN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="avo-dq-7VS"/>
                             <constraint firstItem="mr7-93-Q47" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nn6-4J-Yv1"/>
+                            <constraint firstItem="dGA-25-Kcr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ppm-bN-MIk"/>
                             <constraint firstItem="mr7-93-Q47" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rul-1Z-1VR"/>
+                            <constraint firstItem="yCy-B3-ktp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zHH-rT-piQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -343,40 +356,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTa-Wz-bly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2986.9565217391305" y="-1092.1875"/>
-        </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="WmC-5I-shB">
-            <objects>
-                <collectionViewController id="UaJ-R5-7vb" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bcm-5V-rMY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LfX-uY-gX8">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vzc-k9-9m7">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wHB-mm-QdY">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="UaJ-R5-7vb" id="Vld-Sp-dL6"/>
-                            <outlet property="delegate" destination="UaJ-R5-7vb" id="sQ3-OF-7gv"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="msW-tn-KG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3977" y="-1092"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="dOX-mm-xLL">

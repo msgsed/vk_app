@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         urlComponents.queryItems = [
             URLQueryItem(name: "user_id", value: String(Session.shared.userId)),
             URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "fields", value: "city,domain"),
             URLQueryItem(name: "v", value: "5.68")
         ]
         
@@ -97,6 +98,8 @@ class ViewController: UIViewController {
             let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             
             print(json!)
+            let friends = try! JSONDecoder().decode(UserApiResponse.self, from: data!).list
+            print(friends)
         }
 
         task.resume()
@@ -127,6 +130,9 @@ class ViewController: UIViewController {
             let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             
             print(json!)
+            let photos = try! JSONDecoder().decode(PhotoResponse.self, from: data!).list
+            print(photos)
+
         }
 
         task.resume()
@@ -148,6 +154,7 @@ class ViewController: UIViewController {
         urlComponents.queryItems = [
             URLQueryItem(name: "user_id", value: String(Session.shared.userId)),
             URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "v", value: "5.68")
         ]
         
@@ -156,6 +163,9 @@ class ViewController: UIViewController {
         let url = urlComponents.url
         let task = session.dataTask(with: url!) { (data, response, error) in
             let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            
+            let groups = try! JSONDecoder().decode(GroupResponse.self, from: data!).list
+            print(groups)
             
             print(json!)
         }
