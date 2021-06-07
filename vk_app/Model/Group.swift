@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 struct Group {
     var id: Int
@@ -18,12 +19,12 @@ class GroupResponse: Decodable {
     var list: [GroupApi]
 }
 
-class GroupApi: Decodable {
-    var id = 0
-    var adminLevel = 0
-    var isAdmin = 0
-    var name = ""
-    var type = ""
+class GroupApi: Object, Decodable {
+    @objc dynamic var id = 0
+    @objc dynamic var adminLevel = 0
+    @objc dynamic var isAdmin = 0
+    @objc dynamic var name = ""
+    @objc dynamic var type = ""
     
     enum CodingKeys: String, CodingKey {
         case id

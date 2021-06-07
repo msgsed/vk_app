@@ -10,6 +10,7 @@
 
 
 import Foundation
+import RealmSwift
 
 final class Session {
     private init () {}
@@ -18,4 +19,37 @@ final class Session {
     
     var token: String = ""
     var userId: Int = 0
+    
+    func saveUserApiData(_ userApiData: [UserApi]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(userApiData)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveGroupApiData(_ groupApiData: [GroupApi]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(groupApiData)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+
+    func savePhotoApiData(_ photoApiData: [PhotoApi]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(photoApiData)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
 }

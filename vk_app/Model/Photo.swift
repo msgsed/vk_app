@@ -7,17 +7,18 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class PhotoResponse: Decodable{
     var list: [PhotoApi]
 }
 
-class PhotoApi: Decodable {
-    var albumId = 0
-    var id = 0
-    var ownerId = 0
-    var photo = ""
-    var text = ""
+class PhotoApi: Object, Decodable {
+    @objc dynamic var albumId = 0
+    @objc dynamic var id = 0
+    @objc dynamic var ownerId = 0
+    @objc dynamic var photo = ""
+    @objc dynamic var text = ""
     
     enum CodingKeys: String, CodingKey {
         case albumId = "album_id"

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 struct User {
     var name: String
@@ -19,17 +20,17 @@ class UserApiResponse: Decodable {
     let list: [UserApi]
 }
 
-class UserApi: Decodable {
-    var id = 0
-    var firstName = ""
-    var lastName = ""
-    var isClosed = false
-    var canAccessClosed = false
-    var domain = ""
-    var cityID = 0
-    var cityTitle = ""
-    var online = 0
-    var trackCode = ""
+class UserApi: Object, Decodable {
+    @objc dynamic var id = 0
+    @objc dynamic var firstName = ""
+    @objc dynamic var lastName = ""
+    @objc dynamic var isClosed = false
+    @objc dynamic var canAccessClosed = false
+    @objc dynamic var domain = ""
+    @objc dynamic var cityID = 0
+    @objc dynamic var cityTitle = ""
+    @objc dynamic var online = 0
+    @objc dynamic var trackCode = ""
 
     enum CodingKeys: String, CodingKey {
         case id
