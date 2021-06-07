@@ -100,6 +100,8 @@ class ViewController: UIViewController {
             print(json!)
             let friends = try! JSONDecoder().decode(UserApiResponse.self, from: data!).list
             print(friends)
+            
+            Session.shared.saveUserApiData(friends)
         }
 
         task.resume()
@@ -132,7 +134,8 @@ class ViewController: UIViewController {
             print(json!)
             let photos = try! JSONDecoder().decode(PhotoResponse.self, from: data!).list
             print(photos)
-
+            
+            Session.shared.savePhotoApiData(photos)
         }
 
         task.resume()
@@ -164,10 +167,11 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: url!) { (data, response, error) in
             let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             
+            print(json!)
             let groups = try! JSONDecoder().decode(GroupResponse.self, from: data!).list
             print(groups)
             
-            print(json!)
+            Session.shared.saveGroupApiData(groups)
         }
 
         task.resume()
